@@ -9,17 +9,25 @@ import javax.persistence.*;
  */
 @MappedSuperclass
 
-public class Base implements Serializable {
+public abstract class Base implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-    @GeneratedValue
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "default_gen")
+    protected Long id;
 
 	public Base() {
 		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
    
 }
