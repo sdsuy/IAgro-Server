@@ -31,21 +31,21 @@ public class Usuario extends Base implements Serializable {
 	private String email;
 	
 	@ManyToOne(optional = false)
-	private Rol id_rol;
+	private Rol rol;
 	
 
 	public Usuario() {
 		super();
 	}
 
-	public Usuario(String nombre, String apellido, String documento, String clave, String email, Rol id_rol) {
+	public Usuario(String nombre, String apellido, String documento, String clave, String email, Rol rol) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.documento = documento;
 		this.clave = clave;
 		this.email = email;
-		this.id_rol = id_rol;
+		this.rol = rol;
 	}
 
 	public String getNombre() {
@@ -97,15 +97,17 @@ public class Usuario extends Base implements Serializable {
 		this.email = email;
 	}
 
-
-	public Rol getId_rol() {
-		return id_rol;
+	public Rol getRol() {
+		return rol;
 	}
 
-
-	public void setId_rol(Rol id_rol) {
-		this.id_rol = id_rol;
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
+	
+	
+
+
 	
    
 }
