@@ -8,7 +8,8 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="funcionalidades")
+@SequenceGenerator(name = "default_gen", sequenceName = "funcionalidad_seq", allocationSize = 1)
 public class Funcionalidad extends Base implements Serializable {
 
 	

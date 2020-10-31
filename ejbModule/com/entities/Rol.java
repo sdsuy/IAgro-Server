@@ -8,7 +8,8 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="roles")
+@SequenceGenerator(name = "default_gen", sequenceName = "rol_seq", allocationSize = 1)
 public class Rol extends Base implements Serializable {
 
 	

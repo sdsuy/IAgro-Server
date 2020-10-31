@@ -8,7 +8,8 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="usuarios")
+@SequenceGenerator(name = "default_gen", sequenceName = "usuario_seq", allocationSize = 1)
 public class Usuario extends Base implements Serializable {
 
 	
