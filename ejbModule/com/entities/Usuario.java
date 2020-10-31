@@ -15,16 +15,16 @@ public class Usuario extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Column(length = 40)
+	@Column(length = 40, nullable = false)
 	private String nombre;
 	
-	@Column(length = 40)
+	@Column(length = 40, nullable = false)
 	private String apellido;
 	
 	@Column(length = 20)
 	private String documento;
 	
-	@Column(length = 20 )
+	@Column(length = 20, nullable = false)
 	private String clave;
 	
 	@Column(length = 40)
