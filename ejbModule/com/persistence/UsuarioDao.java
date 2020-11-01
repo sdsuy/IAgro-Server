@@ -32,6 +32,7 @@ public class UsuarioDao implements UsuarioDaoLocal {
 			em.flush();
 			
 		} catch (PersistenceException e) {
+			e.getMessage();
 		
 		}
 		
