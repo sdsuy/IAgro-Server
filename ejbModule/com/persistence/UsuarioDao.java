@@ -47,7 +47,7 @@ public class UsuarioDao implements UsuarioDaoLocal {
 
 	@Override
 	public List<Usuario> readAll() {
-		TypedQuery<Usuario> query = em.createQuery("readAll", Usuario.class);
+		TypedQuery<Usuario> query = em.createNamedQuery("Usuario.readAll", Usuario.class);
 		return query.getResultList();
 	}
 
