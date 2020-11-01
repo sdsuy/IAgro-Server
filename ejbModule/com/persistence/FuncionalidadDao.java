@@ -6,6 +6,7 @@ import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Funcionalidad;
 
@@ -44,19 +45,33 @@ public class FuncionalidadDao implements FuncionalidadDaoLocal {
 
 	@Override
 	public List<Funcionalidad> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		TypedQuery<Funcionalidad> query = em.createQuery("readAll",Funcionalidad.class);
+		return query.getResultList();
 	}
 
 	@Override
 	public void update(Funcionalidad o) {
-		// TODO Auto-generated method stub
+		
+		try {
+			em.merge(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		try {
+			Funcionalidad o = em.find(Funcionalidad.class, id);
+			em.remove(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
+		
 		
 	}
 
