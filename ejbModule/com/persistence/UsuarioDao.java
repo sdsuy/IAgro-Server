@@ -6,6 +6,7 @@ import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Usuario;
 
@@ -32,6 +33,7 @@ public class UsuarioDao implements UsuarioDaoLocal {
 			em.flush();
 			
 		} catch (PersistenceException e) {
+			e.getMessage();
 		
 		}
 		
@@ -39,25 +41,28 @@ public class UsuarioDao implements UsuarioDaoLocal {
 
 	@Override
 	public Usuario read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return em.find(Usuario.class, id);
 	}
 
 	@Override
 	public List<Usuario> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Usuario> query = em.createQuery("readAll", Usuario.class);
+		return query.getResultList();
 	}
 
 	@Override
 	public void update(Usuario o) {
-		// TODO Auto-generated method stub
+		em.merge(o);
+		em.flush();
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		Usuario o = em.find(Usuario.class, id);
+		em.remove(o);
+		em.flush();
 		
 	}
 
