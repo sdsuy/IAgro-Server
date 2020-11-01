@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="funcionalidades")
 @SequenceGenerator(name = "default_gen", sequenceName = "funcionalidad_seq", allocationSize = 1)
+@NamedQuery(name="Funcionalidad.readAll", query="SELECT f FROM Funcionalidad f")
 public class Funcionalidad extends Base implements Serializable {
 
 	
