@@ -10,7 +10,7 @@ import com.entities.Rol;
  * Session Bean implementation class RolDao
  */
 @Singleton
-public class RolDao implements IDao<Rol>, RolDaoLocal {
+public class RolDao implements RolDaoLocal {
 
     /**
      * Default constructor. 

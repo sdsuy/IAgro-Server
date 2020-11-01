@@ -13,11 +13,15 @@ import com.entities.Usuario;
  * Session Bean implementation class UsuarioDao
  */
 @Singleton
+<<<<<<< HEAD
 public class UsuarioDao implements IDao<Usuario>, UsuarioDaoLocal {
 	
 	@PersistenceContext
 	private EntityManager em;
 
+=======
+public class UsuarioDao implements UsuarioDaoLocal {
+>>>>>>> 6b094b61d92fdf292d1cf2d3811660efba35fc09
 
     /**
      * Default constructor. 
