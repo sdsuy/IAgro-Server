@@ -26,31 +26,34 @@ public class FuncionalidadBean implements FuncionalidadBeanRemote {
 
 	@Override
 	public void create(Funcionalidad o) {
-		// TODO Auto-generated method stub
+		
+		funcionalidadDao.create(o);
 		
 	}
 
 	@Override
 	public Funcionalidad read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return funcionalidadDao.read(id);
 	}
 
 	@Override
 	public List<Funcionalidad> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return funcionalidadDao.readAll();
 	}
 
 	@Override
 	public void update(Funcionalidad o) {
-		// TODO Auto-generated method stub
+		
+		funcionalidadDao.update(o);
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		
+		funcionalidadDao.delete(id);
 		
 	}
 
