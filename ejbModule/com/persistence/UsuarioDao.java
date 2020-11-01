@@ -60,7 +60,9 @@ public class UsuarioDao implements UsuarioDaoLocal {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		Usuario o = em.find(Usuario.class, id);
+		em.remove(o);
+		em.flush();
 		
 	}
 
