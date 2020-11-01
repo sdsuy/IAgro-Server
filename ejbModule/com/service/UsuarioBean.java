@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import com.entities.Usuario;
+import com.persistence.UsuarioDao;
 import com.persistence.UsuarioDaoLocal;
 
 /**
@@ -26,31 +27,34 @@ public class UsuarioBean implements UsuarioBeanRemote {
 
 	@Override
 	public void create(Usuario o) {
-		// TODO Auto-generated method stub
+		
+		usuarioDao.create(o);
 		
 	}
 
 	@Override
 	public Usuario read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return usuarioDao.read(id);
 	}
 
 	@Override
 	public List<Usuario> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return usuarioDao.readAll();
 	}
 
 	@Override
 	public void update(Usuario o) {
-		// TODO Auto-generated method stub
+		
+		usuarioDao.update(o);
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		
+		usuarioDao.delete(id);
 		
 	}
 
