@@ -3,6 +3,9 @@ package com.persistence;
 import java.util.List;
 
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 
 import com.entities.Funcionalidad;
 
@@ -11,6 +14,9 @@ import com.entities.Funcionalidad;
  */
 @Singleton
 public class FuncionalidadDao implements FuncionalidadDaoLocal {
+	
+	@PersistenceContext
+	private EntityManager em;
 
     /**
      * Default constructor. 
@@ -21,14 +27,19 @@ public class FuncionalidadDao implements FuncionalidadDaoLocal {
 
 	@Override
 	public void create(Funcionalidad o) {
-		// TODO Auto-generated method stub
+		try {
+			em.persist(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
 		
 	}
 
 	@Override
 	public Funcionalidad read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return em.find(Funcionalidad.class, id);
 	}
 
 	@Override
