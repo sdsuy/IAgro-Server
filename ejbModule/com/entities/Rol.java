@@ -17,7 +17,7 @@ public class Rol extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	@Column(length = 20, nullable = false)
+	@Column(length = 20, nullable = false, unique = true)
 	private String nombre;
 	
 	@Column(length = 40)
