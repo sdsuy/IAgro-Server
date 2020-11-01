@@ -31,6 +31,9 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 40)
 	private String email;
 	
+	@Column(length = 20, nullable = false)
+	private String nickname;
+	
 	@ManyToOne(optional = false)
 	private Rol rol;
 	
@@ -39,15 +42,19 @@ public class Usuario extends Base implements Serializable {
 		super();
 	}
 
-	public Usuario(String nombre, String apellido, String documento, String clave, String email, Rol rol) {
+
+	public Usuario(String nombre, String apellido, String documento, String clave, String email, String nickname,
+			Rol rol) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.documento = documento;
 		this.clave = clave;
 		this.email = email;
+		this.nickname = nickname;
 		this.rol = rol;
 	}
+
 
 	public String getNombre() {
 		return nombre;
@@ -98,16 +105,25 @@ public class Usuario extends Base implements Serializable {
 		this.email = email;
 	}
 
+
+	public String getNickname() {
+		return nickname;
+	}
+
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+
 	public Rol getRol() {
 		return rol;
 	}
 
+
 	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
-	
-	
-
 
 	
    
