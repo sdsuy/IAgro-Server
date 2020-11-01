@@ -53,16 +53,26 @@ public class UsuarioDao implements UsuarioDaoLocal {
 
 	@Override
 	public void update(Usuario o) {
-		em.merge(o);
-		em.flush();
+		try {
+			em.merge(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
+		
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		Usuario o = em.find(Usuario.class, id);
-		em.remove(o);
-		em.flush();
+		try {
+			Usuario o = em.find(Usuario.class, id);
+			em.remove(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
+		
 		
 	}
 
