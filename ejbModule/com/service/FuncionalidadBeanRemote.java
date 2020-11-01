@@ -2,7 +2,9 @@ package com.service;
 
 import javax.ejb.Remote;
 
+import com.entities.Funcionalidad;
+
 @Remote
-public interface FuncionalidadBeanRemote {
+public interface FuncionalidadBeanRemote extends IBean<Funcionalidad> {
 
 }
