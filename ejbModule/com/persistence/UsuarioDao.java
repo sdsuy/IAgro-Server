@@ -53,7 +53,8 @@ public class UsuarioDao implements UsuarioDaoLocal {
 
 	@Override
 	public void update(Usuario o) {
-		// TODO Auto-generated method stub
+		em.merge(o);
+		em.flush();
 		
 	}
 
