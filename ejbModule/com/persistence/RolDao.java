@@ -5,8 +5,11 @@ import java.util.List;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Rol;
+import com.entities.Usuario;
 
 /**
  * Session Bean implementation class RolDao
@@ -27,30 +30,49 @@ public class RolDao implements RolDaoLocal {
 	@Override
 	public void create(Rol o) {
 		
+		try {
+			em.persist(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
 		
 	}
 
 	@Override
 	public Rol read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return em.find(Rol.class, id);
 	}
 
 	@Override
 	public List<Rol> readAll() {
-		// TODO Auto-generated method stub
+		TypedQuery<Rol> query = em.createQuery("readAll",Rol.class);
 		return null;
 	}
 
 	@Override
 	public void update(Rol o) {
-		// TODO Auto-generated method stub
+		try {
+			em.merge(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
+		
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		try {
+			Rol o = em.find(Rol.class, id);
+			em.remove(o);
+			em.flush();
+		} catch (PersistenceException e) {
+			e.getMessage();
+		}
+		
 		
 	}
 
