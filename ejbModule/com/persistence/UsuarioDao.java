@@ -3,6 +3,9 @@ package com.persistence;
 import java.util.List;
 
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 
 import com.entities.Usuario;
 
@@ -11,6 +14,10 @@ import com.entities.Usuario;
  */
 @Singleton
 public class UsuarioDao implements IDao<Usuario>, UsuarioDaoLocal {
+	
+	@PersistenceContext
+	private EntityManager em;
+
 
     /**
      * Default constructor. 
@@ -20,8 +27,14 @@ public class UsuarioDao implements IDao<Usuario>, UsuarioDaoLocal {
     }
 
 	@Override
-	public void create(Usuario o) {
-		// TODO Auto-generated method stub
+	public void create(Usuario o){
+		try {
+			em.persist(o);
+			em.flush();
+			
+		} catch (PersistenceException e) {
+		
+		}
 		
 	}
 
