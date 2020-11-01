@@ -3,6 +3,8 @@ package com.persistence;
 import java.util.List;
 
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import com.entities.Rol;
 
@@ -11,6 +13,9 @@ import com.entities.Rol;
  */
 @Singleton
 public class RolDao implements RolDaoLocal {
+	
+	@PersistenceContext
+	private EntityManager em;
 
     /**
      * Default constructor. 
@@ -21,7 +26,7 @@ public class RolDao implements RolDaoLocal {
 
 	@Override
 	public void create(Rol o) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
