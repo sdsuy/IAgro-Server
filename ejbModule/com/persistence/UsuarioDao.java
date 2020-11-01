@@ -10,7 +10,7 @@ import com.entities.Usuario;
  * Session Bean implementation class UsuarioDao
  */
 @Singleton
-public class UsuarioDao implements IDao<Usuario>, UsuarioDaoLocal {
+public class UsuarioDao implements UsuarioDaoLocal {
 
     /**
      * Default constructor. 

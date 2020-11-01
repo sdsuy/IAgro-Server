@@ -2,7 +2,9 @@ package com.persistence;
 
 import javax.ejb.Local;
 
+import com.entities.Rol;
+
 @Local
-public interface RolDaoLocal {
+public interface RolDaoLocal extends IDao<Rol> {
 
 }

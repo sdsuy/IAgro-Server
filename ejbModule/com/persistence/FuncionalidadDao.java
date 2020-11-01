@@ -10,7 +10,7 @@ import com.entities.Funcionalidad;
  * Session Bean implementation class FuncionalidadDao
  */
 @Singleton
-public class FuncionalidadDao implements IDao<Funcionalidad>, FuncionalidadDaoLocal {
+public class FuncionalidadDao implements FuncionalidadDaoLocal {
 
     /**
      * Default constructor. 
