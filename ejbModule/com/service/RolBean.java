@@ -26,31 +26,31 @@ public class RolBean implements RolBeanRemote {
 
 	@Override
 	public void create(Rol o) {
-		// TODO Auto-generated method stub
+		rolDao.create(o);
 		
 	}
 
 	@Override
 	public Rol read(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return rolDao.read(id);
 	}
 
 	@Override
 	public List<Rol> readAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return rolDao.readAll();
 	}
 
 	@Override
 	public void update(Rol o) {
-		// TODO Auto-generated method stub
+		rolDao.update(o);
 		
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		rolDao.delete(id);
 		
 	}
 
