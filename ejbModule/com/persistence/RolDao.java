@@ -28,13 +28,15 @@ public class RolDao implements RolDaoLocal {
     }
 
 	@Override
-	public void create(Rol o) {
+	public boolean create(Rol o) {
 		
 		try {
 			em.persist(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 	}
@@ -52,25 +54,29 @@ public class RolDao implements RolDaoLocal {
 	}
 
 	@Override
-	public void update(Rol o) {
+	public boolean update(Rol o) {
 		try {
 			em.merge(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 		
 	}
 
 	@Override
-	public void delete(Long id) {
+	public boolean delete(Long id) {
 		try {
 			Rol o = em.find(Rol.class, id);
 			em.remove(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 		

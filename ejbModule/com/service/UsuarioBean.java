@@ -26,9 +26,9 @@ public class UsuarioBean implements UsuarioBeanRemote {
     }
 
 	@Override
-	public void create(Usuario o) {
+	public boolean create(Usuario o) {
 		
-		usuarioDao.create(o);
+		return usuarioDao.create(o);
 		
 	}
 
@@ -45,16 +45,16 @@ public class UsuarioBean implements UsuarioBeanRemote {
 	}
 
 	@Override
-	public void update(Usuario o) {
+	public boolean update(Usuario o) {
 		
-		usuarioDao.update(o);
+		return usuarioDao.update(o);
 		
 	}
 
 	@Override
-	public void delete(Long id) {
+	public boolean delete(Long id) {
 		
-		usuarioDao.delete(id);
+		return usuarioDao.delete(id);
 		
 	}
 

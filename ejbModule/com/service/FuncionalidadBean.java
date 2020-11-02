@@ -25,9 +25,9 @@ public class FuncionalidadBean implements FuncionalidadBeanRemote {
     }
 
 	@Override
-	public void create(Funcionalidad o) {
+	public boolean create(Funcionalidad o) {
 		
-		funcionalidadDao.create(o);
+		return funcionalidadDao.create(o);
 		
 	}
 
@@ -44,16 +44,16 @@ public class FuncionalidadBean implements FuncionalidadBeanRemote {
 	}
 
 	@Override
-	public void update(Funcionalidad o) {
+	public boolean update(Funcionalidad o) {
 		
-		funcionalidadDao.update(o);
+		return funcionalidadDao.update(o);
 		
 	}
 
 	@Override
-	public void delete(Long id) {
+	public boolean delete(Long id) {
 		
-		funcionalidadDao.delete(id);
+		return funcionalidadDao.delete(id);
 		
 	}
 

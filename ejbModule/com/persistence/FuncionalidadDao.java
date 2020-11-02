@@ -27,12 +27,14 @@ public class FuncionalidadDao implements FuncionalidadDaoLocal {
     }
 
 	@Override
-	public void create(Funcionalidad o) {
+	public boolean create(Funcionalidad o) {
 		try {
 			em.persist(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 	}
@@ -51,25 +53,29 @@ public class FuncionalidadDao implements FuncionalidadDaoLocal {
 	}
 
 	@Override
-	public void update(Funcionalidad o) {
+	public boolean update(Funcionalidad o) {
 		
 		try {
 			em.merge(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 	}
 
 	@Override
-	public void delete(Long id) {
+	public boolean delete(Long id) {
 		try {
 			Funcionalidad o = em.find(Funcionalidad.class, id);
 			em.remove(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 		

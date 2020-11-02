@@ -27,14 +27,14 @@ public class UsuarioDao implements UsuarioDaoLocal {
     }
 
 	@Override
-	public void create(Usuario o){
+	public boolean create(Usuario o){
 		try {
 			em.persist(o);
 			em.flush();
-			
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
-		
+			return false;
 		}
 		
 	}
@@ -52,25 +52,29 @@ public class UsuarioDao implements UsuarioDaoLocal {
 	}
 
 	@Override
-	public void update(Usuario o) {
+	public boolean update(Usuario o) {
 		try {
 			em.merge(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 		
 	}
 
 	@Override
-	public void delete(Long id) {
+	public boolean delete(Long id) {
 		try {
 			Usuario o = em.find(Usuario.class, id);
 			em.remove(o);
 			em.flush();
+			return true;
 		} catch (PersistenceException e) {
 			e.getMessage();
+			return false;
 		}
 		
 		

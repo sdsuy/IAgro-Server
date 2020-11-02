@@ -25,8 +25,8 @@ public class RolBean implements RolBeanRemote {
     }
 
 	@Override
-	public void create(Rol o) {
-		rolDao.create(o);
+	public boolean create(Rol o) {
+		return rolDao.create(o);
 		
 	}
 
@@ -43,14 +43,14 @@ public class RolBean implements RolBeanRemote {
 	}
 
 	@Override
-	public void update(Rol o) {
-		rolDao.update(o);
+	public boolean update(Rol o) {
+		return rolDao.update(o);
 		
 	}
 
 	@Override
-	public void delete(Long id) {
-		rolDao.delete(id);
+	public boolean delete(Long id) {
+		return rolDao.delete(id);
 		
 	}
 
