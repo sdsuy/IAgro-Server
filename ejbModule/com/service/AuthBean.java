@@ -2,7 +2,6 @@ package com.service;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
-import javax.ejb.Remove;
 
 import com.entities.Rol;
 import com.entities.Usuario;
@@ -73,7 +72,6 @@ public class AuthBean implements AuthBeanRemote {
 		return authUser;
 	}
 
-	@Remove  //Terminar sesión del Stateful Bean al hacer logout
 	@Override
 	public void logout() {
 		authUser = null;
