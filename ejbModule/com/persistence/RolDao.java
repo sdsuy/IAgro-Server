@@ -49,8 +49,8 @@ public class RolDao implements RolDaoLocal {
 
 	@Override
 	public List<Rol> readAll() {
-		TypedQuery<Rol> query = em.createQuery("readAll",Rol.class);
-		return null;
+		TypedQuery<Rol> query = em.createNamedQuery("Rol.readAll", Rol.class);
+		return query.getResultList();
 	}
 
 	@Override

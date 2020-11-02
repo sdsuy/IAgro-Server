@@ -48,7 +48,7 @@ public class FuncionalidadDao implements FuncionalidadDaoLocal {
 	@Override
 	public List<Funcionalidad> readAll() {
 		
-		TypedQuery<Funcionalidad> query = em.createQuery("readAll",Funcionalidad.class);
+		TypedQuery<Funcionalidad> query = em.createNamedQuery("Funcionalidad.readAll", Funcionalidad.class);
 		return query.getResultList();
 	}
 
