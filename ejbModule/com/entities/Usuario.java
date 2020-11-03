@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="usuarios")
 @SequenceGenerator(name = "default_gen", sequenceName = "usuario_seq", allocationSize = 1)
-@NamedQuery(name="Usuario.readAll", query="SELECT u FROM Usuario u")
+@NamedQueries(@NamedQuery(name="Usuario.readAll", query="SELECT u FROM Usuario u"))
 @NamedQuery(name="Usuario.login", query="SELECT u FROM Usuario u WHERE u.nickname = :nickname AND u.clave = :clave")
 public class Usuario extends Base implements Serializable {
 
