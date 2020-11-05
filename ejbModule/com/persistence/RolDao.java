@@ -9,7 +9,6 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Rol;
-import com.entities.Usuario;
 
 /**
  * Session Bean implementation class RolDao
