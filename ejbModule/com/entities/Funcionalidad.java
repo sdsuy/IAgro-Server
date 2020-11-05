@@ -1,6 +1,8 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -16,11 +18,21 @@ public class Funcionalidad extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@PreRemove
+	private void removeFuncionalidadesDeRol() {
+		for(Rol rol: roles) {
+			rol.getFuncionalidades().remove(this);
+		}
+	}
+	
 	@Column(length = 20, nullable = false, unique = true)
 	private String nombre;
 	
 	@Column(length = 40)
 	private String descripcion;
+	
+	@ManyToMany(mappedBy="funcionalidades")
+	private List<Rol> roles;
 
 	public Funcionalidad() {
 		super();
@@ -46,6 +58,14 @@ public class Funcionalidad extends Base implements Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public List<Rol> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
 	}
    
 }
