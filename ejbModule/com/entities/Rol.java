@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Table(name="roles")
 @SequenceGenerator(name = "default_gen", sequenceName = "rol_seq", allocationSize = 1)
 @NamedQuery(name="Rol.readAll", query="SELECT r FROM Rol r")
+@NamedQuery(name="Rol.readfuncionalidades", query="SELECT DISTINCT r FROM Rol r INNER JOIN FETCH r.funcionalidades f")
 public class Rol extends Base implements Serializable {
 
 	
