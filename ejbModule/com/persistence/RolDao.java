@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
@@ -42,8 +43,14 @@ public class RolDao implements RolDaoLocal {
 
 	@Override
 	public Rol read(Long id) {
+		TypedQuery<Rol> query = em.createNamedQuery("Rol.readfuncionalidades",Rol.class);
+		query.setParameter("id", id);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 		
-		return em.find(Rol.class, id);
 	}
 
 	@Override
