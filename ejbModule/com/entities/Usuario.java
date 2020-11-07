@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name="usuarios")
 @SequenceGenerator(name = "default_gen", sequenceName = "usuario_seq", allocationSize = 1)
 @NamedQuery(name="Usuario.readAll", query="SELECT u FROM Usuario u")
-@NamedQuery(name="Usuario.login", query="SELECT u FROM Usuario u WHERE u.nickname = :nickname AND u.clave = :clave")
+@NamedQuery(name="Usuario.login", query="SELECT u FROM Usuario u INNER JOIN FETCH u.rol r LEFT JOIN FETCH r.funcionalidades f WHERE u.nickname = :nickname AND u.clave = :clave")
 public class Usuario extends Base implements Serializable {
 
 	
