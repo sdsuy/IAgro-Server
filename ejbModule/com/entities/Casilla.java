@@ -2,6 +2,7 @@ package com.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
@@ -19,14 +20,18 @@ public class Casilla implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private long id_actividad;
+	private long id_casilla;
+	
+	@ManyToMany
+	private List<Formulario> formulario;
 	
 	private String parámetro; 
 	
-	@GeneratedValue
 	private String uni_medida;
 	
 	private String descripción; 
+	
+	
 	
 	//● tipo de valor (*): variable según el tipo de dato como entero, string, double,
 	//boolean.
@@ -35,14 +40,18 @@ public class Casilla implements Serializable {
 	public Casilla() {
 		super();
 	}
-
-	public long getId_actividad() {
-		return id_actividad;
+	
+	public long getId_casilla() {
+		return id_casilla;
 	}
 
-	public void setId_actividad(long id_actividad) {
-		this.id_actividad = id_actividad;
+
+
+	public void setId_casilla(long id_casilla) {
+		this.id_casilla = id_casilla;
 	}
+
+
 
 	public String getParámetro() {
 		return parámetro;
