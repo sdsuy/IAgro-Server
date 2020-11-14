@@ -37,6 +37,7 @@ public class Casilla implements Serializable {
 	//boolean.
 	
 
+
 	public Casilla() {
 		super();
 	}
@@ -75,6 +76,14 @@ public class Casilla implements Serializable {
 
 	public void setDescripción(String descripción) {
 		this.descripción = descripción;
+	}
+	
+	public List<Formulario> getFormulario() {
+		return formulario;
+	}
+
+	public void setFormulario(List<Formulario> formulario) {
+		this.formulario = formulario;
 	}
 	
    
