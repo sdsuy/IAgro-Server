@@ -2,9 +2,11 @@ package com.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToMany;
 
 /**
  * Entity implementation class for Entity: Formulario
@@ -25,6 +27,8 @@ public class Formulario implements Serializable {
 	@Column(length = 50, nullable = false, unique = true)
 	private String nombre;
 	
+	@ManyToMany
+	private List<Casilla> casillas;
 	
 	private String met_muestreo;
 	
@@ -134,6 +138,15 @@ public class Formulario implements Serializable {
 
 	public String getTip_muestreo() {
 		return tip_muestreo;
+	}
+	
+	public List<Casilla> getCasillas() {
+		return casillas;
+	}
+
+
+	public void setCasillas(List<Casilla> casillas) {
+		this.casillas = casillas;
 	}
 
 
