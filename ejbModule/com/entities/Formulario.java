@@ -92,16 +92,6 @@ public class Formulario implements Serializable {
 	}
 
 
-	public String getNom_formulario() {
-		return nom_formulario;
-	}
-
-
-	public void setNom_formulario(String nom_formulario) {
-		this.nom_formulario = nom_formulario;
-	}
-
-
 	public String getResumen() {
 		return resumen;
 	}
