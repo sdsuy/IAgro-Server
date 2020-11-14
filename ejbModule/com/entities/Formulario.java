@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 @Entity
 @Table(name="FORMULARIO")
 @SequenceGenerator(name = "default_gen", sequenceName = "form_seq", allocationSize = 1)
+
 public class Formulario implements Serializable {
 
 	
@@ -21,14 +22,13 @@ public class Formulario implements Serializable {
 	@Id
 	private Long id_formulario;
 	
+	@Column(length = 50, nullable = false, unique = true)
 	private String nombre;
 	
 	
 	private String met_muestreo;
 	
 	private String equipamiento;
-	
-	private String nom_formulario;
 	
 	private String resumen;
 	
