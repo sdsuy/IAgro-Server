@@ -25,15 +25,15 @@ public class Casilla implements Serializable {
 	@ManyToMany
 	private List<Formulario> formulario;
 	
-	private String parámetro; 
+	private String parametro; 
 	
 	private String uni_medida;
 	
-	private String descripción; 
+	private String descripcion; 
 	
 	
 	
-	//● tipo de valor (*): variable según el tipo de dato como entero, string, double,
+	//tipo de valor (*): variable según el tipo de dato como entero, string, double,
 	//boolean.
 	
 
@@ -54,12 +54,12 @@ public class Casilla implements Serializable {
 
 
 
-	public String getParámetro() {
-		return parámetro;
+	public String getParametro() {
+		return parametro;
 	}
 
-	public void setParámetro(String parámetro) {
-		this.parámetro = parámetro;
+	public void setParametro(String parametro) {
+		this.parametro = parametro;
 	}
 
 	public String getUni_medida() {
@@ -70,12 +70,12 @@ public class Casilla implements Serializable {
 		this.uni_medida = uni_medida;
 	}
 
-	public String getDescripción() {
-		return descripción;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescripción(String descripción) {
-		this.descripción = descripción;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
 	public List<Formulario> getFormulario() {
