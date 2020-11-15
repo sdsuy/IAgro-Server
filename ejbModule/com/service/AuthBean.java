@@ -44,11 +44,11 @@ public class AuthBean implements AuthBeanRemote {
 
 	@Override
 	public void bootstrap() {
-    	Rol bootAdminRol = new Rol();
-    	bootAdminRol.setNombre(ROL);
-    	bootAdminRol.setDescripcion(DESCRIPCION);
+//    	Rol bootAdminRol = new Rol();
+//    	bootAdminRol.setNombre(ROL);
+//    	bootAdminRol.setDescripcion(DESCRIPCION);
     	
-    	rolDao.create(bootAdminRol); // se debe crear primero el rol antes del usuario
+//    	rolDao.create(bootAdminRol); // se debe crear primero el rol antes del usuario
     	
     	Usuario bootUser = new Usuario();
     	bootUser.setNombre(NOMBRE);
@@ -57,7 +57,7 @@ public class AuthBean implements AuthBeanRemote {
     	bootUser.setEmail(EMAIL);
     	bootUser.setNickname(NICKNAME);
     	bootUser.setClave(CLAVE);
-    	bootUser.setRol(bootAdminRol);
+    	bootUser.setRol(Rol.ADMINISTRADOR);
     	
     	usuarioDao.create(bootUser); // creo el usuario
 	}

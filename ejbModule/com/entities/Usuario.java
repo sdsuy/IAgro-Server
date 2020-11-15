@@ -35,14 +35,12 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 20, nullable = false, unique = true)
 	private String nickname;
 	
-	@ManyToOne(optional = false)
+	@Enumerated(EnumType.STRING)
 	private Rol rol;
-	
 
 	public Usuario() {
 		super();
 	}
-
 
 	public Usuario(String nombre, String apellido, String documento, String clave, String email, String nickname,
 			Rol rol) {
