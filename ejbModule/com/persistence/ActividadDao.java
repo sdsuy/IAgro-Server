@@ -3,6 +3,8 @@ package com.persistence;
 import java.util.List;
 
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import com.entities.Actividad;
 
@@ -11,6 +13,9 @@ import com.entities.Actividad;
  */
 @Singleton
 public class ActividadDao implements ActividadDaoRemote {
+	
+	@PersistenceContext
+	private EntityManager em;
 
     /**
      * Default constructor. 
