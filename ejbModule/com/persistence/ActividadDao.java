@@ -5,8 +5,11 @@ import java.util.List;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Actividad;
+import com.entities.Usuario;
 
 /**
  * Session Bean implementation class ActividadDao
@@ -26,32 +29,51 @@ public class ActividadDao implements ActividadDaoRemote {
 
 	@Override
 	public boolean create(Actividad o) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			em.persist(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 	@Override
 	public Actividad read(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return em.find(Actividad.class, id);
 	}
 
 	@Override
 	public List<Actividad> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Actividad> query = em.createNamedQuery("Actividad.readAll", Actividad.class);
+		return query.getResultList();
 	}
 
 	@Override
 	public boolean update(Actividad o) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			em.merge(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean delete(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			Actividad o = em.find(Actividad.class, id);
+			em.remove(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 }
