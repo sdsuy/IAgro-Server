@@ -5,8 +5,11 @@ import java.util.List;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Casilla;
+import com.entities.Usuario;
 
 /**
  * Session Bean implementation class CasillaDao
@@ -26,32 +29,51 @@ public class CasillaDao implements CasillaDaoRemote {
 
 	@Override
 	public boolean create(Casilla o) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			em.persist(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 	@Override
 	public Casilla read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return em.find(Casilla.class, id);
 	}
 
 	@Override
 	public List<Casilla> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Casilla> query = em.createNamedQuery("Casilla.readAll", Casilla.class);
+		return query.getResultList();
 	}
 
 	@Override
 	public boolean update(Casilla o) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			em.merge(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean delete(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			Casilla o = em.find(Casilla.class, id);
+			em.remove(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 }
