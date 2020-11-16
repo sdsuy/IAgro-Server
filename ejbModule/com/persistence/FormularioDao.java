@@ -5,6 +5,8 @@ import java.util.List;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Formulario;
 
@@ -26,32 +28,51 @@ public class FormularioDao implements FormularioDaoRemote {
 
 	@Override
 	public boolean create(Formulario o) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			em.persist(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 	@Override
 	public Formulario read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Formulario.class, id);
 	}
 
 	@Override
 	public List<Formulario> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Formulario> query = em.createNamedQuery("Formulario.readAll", Formulario.class);
+		return query.getResultList();
 	}
 
 	@Override
 	public boolean update(Formulario o) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			em.merge(o);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean delete(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			Formulario form = em.find(Formulario.class, id);
+			em.remove(form);
+			em.flush();
+			return true;
+		} catch (PersistenceException e) {
+			e.getMessage();
+			return false;
+		}
+		
 	}
 
 }
