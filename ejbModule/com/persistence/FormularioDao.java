@@ -14,7 +14,7 @@ import com.entities.Formulario;
  * Session Bean implementation class FormularioDao
  */
 @Singleton
-public class FormularioDao implements FormularioDaoRemote {
+public class FormularioDao implements FormularioDaoLocal {
 	
 	@PersistenceContext
 	private EntityManager em;
