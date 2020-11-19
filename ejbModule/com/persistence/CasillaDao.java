@@ -15,7 +15,7 @@ import com.entities.Usuario;
  * Session Bean implementation class CasillaDao
  */
 @Singleton
-public class CasillaDao implements CasillaDaoRemote {
+public class CasillaDao implements CasillaDaoLocal {
 	
 	@PersistenceContext
 	private EntityManager em;
