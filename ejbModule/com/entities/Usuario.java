@@ -12,14 +12,10 @@ import javax.persistence.*;
 @SequenceGenerator(name = "default_gen", sequenceName = "usuario_seq", allocationSize = 1)
 @NamedQuery(name="Usuario.readAll", query="SELECT u FROM Usuario u")
 @NamedQuery(name="Usuario.login", query="SELECT u FROM Usuario u INNER JOIN FETCH u.rol r LEFT JOIN FETCH r.funcionalidades f WHERE u.nickname = :nickname AND u.clave = :clave")
-public class Usuario implements Serializable {
+public class Usuario extends Base implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "default_gen")
-    protected Long id;
 	
 	@Column(length = 40, nullable = false)
 	private String nombre;
