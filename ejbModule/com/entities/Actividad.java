@@ -11,20 +11,17 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Table(name="Actividades")
+@Table(name="actividades")
 @SequenceGenerator(name = "default_gen", sequenceName = "actividad_seq", allocationSize = 1)
-public class Actividad implements Serializable {
-
+@NamedQuery(name="Actividad.readAll", query="SELECT a FROM Actividad a")
+public class Actividad extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	
-	@GeneratedValue
-	@Id
-	private long id_actividad;
 	
 	@ManyToOne
 	private Formulario form;
 	
+	@ManyToOne
 	private Usuario user;
 	
 	private Date fecha;
@@ -35,16 +32,6 @@ public class Actividad implements Serializable {
 
 	public Actividad() {
 		super();
-	}
-
-
-	public long getId_actividad() {
-		return id_actividad;
-	}
-
-
-	public void setId_actividad(long id_actividad) {
-		this.id_actividad = id_actividad;
 	}
 
 

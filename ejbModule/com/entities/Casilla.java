@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.*;
-import javax.persistence.GeneratedValue;
 
 /**
  * Entity implementation class for Entity: Actividad
@@ -13,14 +12,12 @@ import javax.persistence.GeneratedValue;
  */
 @Entity
 @Table(name="casillas")
-
-public class Casilla implements Serializable {
+@SequenceGenerator(name = "default_gen", sequenceName = "casilla_seq", allocationSize = 1)
+@NamedQuery(name="Casilla.readAll", query="SELECT c FROM Casilla c")
+public class Casilla extends Base implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	private long id_casilla;
 	
 	@ManyToMany
 	private List<Formulario> formulario;
@@ -41,18 +38,6 @@ public class Casilla implements Serializable {
 	public Casilla() {
 		super();
 	}
-	
-	public long getId_casilla() {
-		return id_casilla;
-	}
-
-
-
-	public void setId_casilla(long id_casilla) {
-		this.id_casilla = id_casilla;
-	}
-
-
 
 	public String getParametro() {
 		return parametro;

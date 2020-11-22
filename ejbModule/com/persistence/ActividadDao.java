@@ -9,7 +9,6 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Actividad;
-import com.entities.Usuario;
 
 /**
  * Session Bean implementation class ActividadDao

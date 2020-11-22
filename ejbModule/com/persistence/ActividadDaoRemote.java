@@ -1,10 +1,10 @@
 package com.persistence;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import com.entities.Actividad;
 
-@Remote
+@Local
 public interface ActividadDaoRemote extends IDao<Actividad>{
 	
 

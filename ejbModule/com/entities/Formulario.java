@@ -5,24 +5,19 @@ import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.*;
-import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToMany;
 
 /**
  * Entity implementation class for Entity: Formulario
  *
  */
 @Entity
-@Table(name="FORMULARIO")
+@Table(name="formulario")
 @SequenceGenerator(name = "default_gen", sequenceName = "form_seq", allocationSize = 1)
-
-public class Formulario implements Serializable {
+@NamedQuery(name="Formulario.readAll", query="SELECT f FROM Formulario f")
+public class Formulario extends Base implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-	@GeneratedValue
-	@Id
-	private Long id_formulario;
 	
 	@Column(length = 50, nullable = false, unique = true)
 	private String nombre;
@@ -54,17 +49,6 @@ public class Formulario implements Serializable {
 	public Formulario() {
 		super();
 	}
-
-
-	public Long getId_formulario() {
-		return id_formulario;
-	}
-
-
-	public void setId_formulario(Long id_formulario) {
-		this.id_formulario = id_formulario;
-	}
-
 
 	public String getNombre() {
 		return nombre;

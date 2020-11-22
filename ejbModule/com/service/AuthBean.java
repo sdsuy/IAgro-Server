@@ -6,7 +6,6 @@ import javax.ejb.Stateful;
 import com.entities.Rol;
 import com.entities.Usuario;
 import com.persistence.AuthDaoLocal;
-import com.persistence.RolDaoLocal;
 import com.persistence.UsuarioDaoLocal;
 
 /**
@@ -21,17 +20,14 @@ public class AuthBean implements AuthBeanRemote {
 	private static final String EMAIL = "admin@utec";
 	private static final String NICKNAME = "admin";
 	private static final String CLAVE = "1234";
-	private static final String ROL = "ADMINISTRADOR";
-	private static final String DESCRIPCION = "USUARIO CON SUPER PODERES";
+//	private static final String ROL = "ADMINISTRADOR";
+//	private static final String DESCRIPCION = "USUARIO CON SUPER PODERES";
 
 	@EJB
 	private AuthDaoLocal authDao;
 	
 	@EJB
 	private UsuarioDaoLocal usuarioDao;
-	
-	@EJB
-	private RolDaoLocal rolDao;
 	
 	private Usuario authUser;
 
