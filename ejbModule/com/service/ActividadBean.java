@@ -24,32 +24,27 @@ public class ActividadBean implements ActividadBeanRemote {
 
 	@Override
 	public boolean create(Actividad o) {
-		
 		return actividadDao.create(o);
 	}
 
 	@Override
 	public Actividad read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return actividadDao.read(id);
 	}
 
 	@Override
 	public List<Actividad> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return actividadDao.readAll();
 	}
 
 	@Override
 	public boolean update(Actividad o) {
-		// TODO Auto-generated method stub
-		return false;
+		return actividadDao.update(o);
 	}
 
 	@Override
 	public boolean delete(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+		return actividadDao.delete(id);
 	}
 
 }
