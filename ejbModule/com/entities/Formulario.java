@@ -24,15 +24,6 @@ public class Formulario extends Base implements Serializable {
 	
 	private Actividad actividad;
 	
-	public Actividad getActividad() {
-		return actividad;
-	}
-
-	public void setActividad(Actividad actividad) {
-		this.actividad = actividad;
-	}
-
-
 	@ManyToMany
 	private List<Casilla> casillas;
 	
@@ -178,5 +169,13 @@ public class Formulario extends Base implements Serializable {
 	public void setEst_muestreo(String est_muestreo) {
 		this.est_muestreo = est_muestreo;
 	}
-   
+
+	public Actividad getActividad() {
+		return actividad;
+	}
+
+	public void setActividad(Actividad actividad) {
+		this.actividad = actividad;
+	}
+
 }
