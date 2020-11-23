@@ -22,6 +22,17 @@ public class Formulario extends Base implements Serializable {
 	@Column(length = 50, nullable = false, unique = true)
 	private String nombre;
 	
+	private Actividad actividad;
+	
+	public Actividad getActividad() {
+		return actividad;
+	}
+
+	public void setActividad(Actividad actividad) {
+		this.actividad = actividad;
+	}
+
+
 	@ManyToMany
 	private List<Casilla> casillas;
 	
