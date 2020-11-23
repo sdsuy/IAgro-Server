@@ -14,7 +14,7 @@ import com.entities.Actividad;
  * Session Bean implementation class ActividadDao
  */
 @Singleton
-public class ActividadDao implements ActividadDaoRemote {
+public class ActividadDao implements ActividadDaoLocal {
 	
 	@PersistenceContext
 	private EntityManager em;

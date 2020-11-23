@@ -5,7 +5,7 @@ import javax.ejb.Local;
 import com.entities.Actividad;
 
 @Local
-public interface ActividadDaoRemote extends IDao<Actividad>{
+public interface ActividadDaoLocal extends IDao<Actividad>{
 	
 
 }
