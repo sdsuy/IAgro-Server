@@ -2,6 +2,7 @@ package com.service;
 
 import javax.ejb.Remote;
 
+import com.entities.Actividad;
 import com.entities.Usuario;
 
 @Remote
