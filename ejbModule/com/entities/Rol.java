@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="roles")
 @SequenceGenerator(name = "default_gen", sequenceName = "rol_seq", allocationSize = 1)
+@NamedQuery(name="Rol.read", query="SELECT r FROM Rol r WHERE r.rol = :rol")
 public class Rol extends Base implements Serializable {
 
 	

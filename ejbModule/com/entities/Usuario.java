@@ -120,10 +120,15 @@ public class Usuario extends Base implements Serializable {
 		return rol;
 	}
 
-
+	// sobrecarga de setter (para cuando el rol aun NO existe en la base de datos)
 	public void setRol(Roles rol) {
 		this.rol = new Rol();
 		this.rol.setRol(rol);
+	}
+	
+	// sobrecarga de setter (para cuando el rol ya existe en la base de datos)
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 
 	

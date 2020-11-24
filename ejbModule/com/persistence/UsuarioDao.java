@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
+import com.entities.Rol;
 import com.entities.Usuario;
 
 /**
@@ -29,7 +31,14 @@ public class UsuarioDao implements UsuarioDaoLocal {
 	@Override
 	public boolean create(Usuario o){
 		try {
-			em.persist(o.getRol());
+			TypedQuery<Rol> query = em.createNamedQuery("Rol.read", Rol.class);
+			query.setParameter("rol", o.getRol().getRol());
+			try {
+				Rol rol = query.getSingleResult();
+				o.setRol(rol); // si el rol ya existe en la base de datos, no hago nada, solo lo asigno completo al Usuario o
+			} catch (NoResultException  e) {
+				em.persist(o.getRol()); // si el rol no existe en la base de datos lo creo (persist)
+			}
 			em.persist(o);
 			em.flush();
 			return true;
