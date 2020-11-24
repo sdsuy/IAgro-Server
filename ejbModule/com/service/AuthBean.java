@@ -3,7 +3,7 @@ package com.service;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
 
-import com.entities.Rol;
+import com.entities.Roles;
 import com.entities.Usuario;
 import com.persistence.AuthDaoLocal;
 import com.persistence.UsuarioDaoLocal;
@@ -53,7 +53,7 @@ public class AuthBean implements AuthBeanRemote {
     	bootUser.setEmail(EMAIL);
     	bootUser.setNickname(NICKNAME);
     	bootUser.setClave(CLAVE);
-    	bootUser.setRol(Rol.ADMINISTRADOR);
+    	bootUser.setRol(Roles.ADMINISTRADOR);
     	
     	usuarioDao.create(bootUser); // creo el usuario
 	}
