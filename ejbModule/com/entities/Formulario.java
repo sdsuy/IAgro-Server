@@ -22,7 +22,11 @@ public class Formulario extends Base implements Serializable {
 	@Column(length = 50, nullable = false, unique = true)
 	private String nombre;
 	
+	
 	private Actividad actividad;
+	
+	@ManyToOne
+	private Usuario usuario;
 	
 	@ManyToMany
 	private List<Casilla> casillas;
