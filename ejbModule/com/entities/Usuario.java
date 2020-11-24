@@ -116,8 +116,8 @@ public class Usuario extends Base implements Serializable {
 	}
 
 
-	public Roles getRol() {
-		return rol.getRol();
+	public Rol getRol() {
+		return rol;
 	}
 
 
