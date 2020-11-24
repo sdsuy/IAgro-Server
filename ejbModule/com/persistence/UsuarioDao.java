@@ -29,6 +29,7 @@ public class UsuarioDao implements UsuarioDaoLocal {
 	@Override
 	public boolean create(Usuario o){
 		try {
+			em.persist(o.getRol());
 			em.persist(o);
 			em.flush();
 			return true;
