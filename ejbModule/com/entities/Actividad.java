@@ -22,7 +22,7 @@ public class Actividad extends Base implements Serializable {
 	private Formulario form;
 	
 	@ManyToOne
-	private Usuario user;
+	private Usuario usuario;
 	
 	private Date fecha;
 	
@@ -45,13 +45,13 @@ public class Actividad extends Base implements Serializable {
 	}
 
 
-	public Usuario getUser() {
-		return user;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
 
-	public void setUser(Usuario user) {
-		this.user = user;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 
