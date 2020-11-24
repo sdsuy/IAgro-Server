@@ -11,7 +11,7 @@ import javax.persistence.Enumerated;
 @Entity
 @Table(name="departamentos")
 @SequenceGenerator(name = "default_gen", sequenceName = "departamento_seq", allocationSize = 1)
-public class Departamento implements Serializable {
+public class Departamento extends Base implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
