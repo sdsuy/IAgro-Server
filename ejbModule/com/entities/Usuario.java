@@ -35,24 +35,25 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 20, nullable = false, unique = true)
 	private String nickname;
 	
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
+	@ManyToOne
 	private Rol rol;
 
 	public Usuario() {
 		super();
 	}
 
-	public Usuario(String nombre, String apellido, String documento, String clave, String email, String nickname,
-			Rol rol) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.documento = documento;
-		this.clave = clave;
-		this.email = email;
-		this.nickname = nickname;
-		this.rol = rol;
-	}
+//	public Usuario(String nombre, String apellido, String documento, String clave, String email, String nickname,
+//			Rol rol) {
+//		super();
+//		this.nombre = nombre;
+//		this.apellido = apellido;
+//		this.documento = documento;
+//		this.clave = clave;
+//		this.email = email;
+//		this.nickname = nickname;
+//		this.rol = rol;
+//	}
 
 
 	public String getNombre() {
@@ -115,13 +116,14 @@ public class Usuario extends Base implements Serializable {
 	}
 
 
-	public Rol getRol() {
-		return rol;
+	public Roles getRol() {
+		return rol.getRol();
 	}
 
 
-	public void setRol(Rol rol) {
-		this.rol = rol;
+	public void setRol(Roles rol) {
+		this.rol = new Rol();
+		this.rol.setRol(rol);
 	}
 
 	
