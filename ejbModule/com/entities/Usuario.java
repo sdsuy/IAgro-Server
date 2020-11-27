@@ -23,7 +23,7 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 40, nullable = false)
 	private String apellido;
 	
-	@Column(length = 20, unique = true)
+	@Column(length = 20, unique = true, nullable = false)
 	private String documento;
 	
 	@Column(length = 20, nullable = false)
@@ -36,7 +36,7 @@ public class Usuario extends Base implements Serializable {
 	private String nickname;
 	
 //	@Enumerated(EnumType.STRING)
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Rol rol;
 
 	public Usuario() {
