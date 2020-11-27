@@ -3,6 +3,7 @@ package com.entities;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -24,8 +25,8 @@ public class Actividad extends Base implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
-	@ManyToOne
-	private Informacion info;
+	@ManyToMany
+	private List<Informacion> info;
 	
 	private Date fecha;
 	
@@ -88,12 +89,12 @@ public class Actividad extends Base implements Serializable {
 	}
 
 
-	public Informacion getInfo() {
+	public List<Informacion> getInfo() {
 		return info;
 	}
 
 
-	public void setInfo(Informacion info) {
+	public void setInfo(List<Informacion> info) {
 		this.info = info;
 	}
 	
