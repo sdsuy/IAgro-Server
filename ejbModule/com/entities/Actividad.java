@@ -24,6 +24,9 @@ public class Actividad extends Base implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
+	@ManyToOne
+	private Informacion info;
+	
 	private Date fecha;
 	
 	private Timestamp hora;
@@ -83,6 +86,17 @@ public class Actividad extends Base implements Serializable {
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
+
+
+	public Informacion getInfo() {
+		return info;
+	}
+
+
+	public void setInfo(Informacion info) {
+		this.info = info;
+	}
+	
 	
    
 }
