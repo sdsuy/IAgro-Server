@@ -35,6 +35,12 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 20, nullable = false, unique = true)
 	private String nickname;
 	
+	@Column(length = 50)
+	private String instituto;
+	
+	@Column(length = 30)
+	private String profesion;
+	
 //	@Enumerated(EnumType.STRING)
 	@ManyToOne(optional = false)
 	private Rol rol;
@@ -130,6 +136,24 @@ public class Usuario extends Base implements Serializable {
 	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
+
+	public String getInstituto() {
+		return instituto;
+	}
+
+	public void setInstituto(String instituto) {
+		this.instituto = instituto;
+	}
+
+	public String getProfesion() {
+		return profesion;
+	}
+
+	public void setProfesion(String profesion) {
+		this.profesion = profesion;
+	}
+	
+	
 
 	
    
