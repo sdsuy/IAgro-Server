@@ -19,8 +19,6 @@ public class Casilla extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@ManyToMany
-	private List<Formulario> formulario;
 	
 	private String parametro; 
 	
@@ -28,13 +26,9 @@ public class Casilla extends Base implements Serializable {
 	
 	private String descripcion; 
 	
+	private String tipo;
 	
 	
-	//tipo de valor (*): variable según el tipo de dato como entero, string, double,
-	//boolean.
-	
-
-
 	public Casilla() {
 		super();
 	}
@@ -62,13 +56,13 @@ public class Casilla extends Base implements Serializable {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
-	public List<Formulario> getFormulario() {
-		return formulario;
+
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setFormulario(List<Formulario> formulario) {
-		this.formulario = formulario;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
    
