@@ -54,7 +54,7 @@ public class CasillaBean implements CasillaBeanRemote {
 	public void createDefault() {
 		// Casilla Metodo de Muestreo
 		Casilla metodoMuestreo = new Casilla();
-		metodoMuestreo.setParametro("Método de muestreo");
+		metodoMuestreo.setParametro("Metodo de muestreo");
 		metodoMuestreo.setUnidadMedida("");
 		metodoMuestreo.setDescripcion("");
 		metodoMuestreo.setTipo(Tipos.STRING);
@@ -62,7 +62,7 @@ public class CasillaBean implements CasillaBeanRemote {
 		
 		// Casilla Estación de Muestreo
 		Casilla estacionMuestreo = new Casilla();
-		estacionMuestreo.setParametro("Estación de Muestreo"); 
+		estacionMuestreo.setParametro("Estacion de Muestreo"); 
 		estacionMuestreo.setUnidadMedida("");
 		estacionMuestreo.setDescripcion("");
 		estacionMuestreo.setTipo(Tipos.STRING);
@@ -78,7 +78,7 @@ public class CasillaBean implements CasillaBeanRemote {
 		
 		// Casilla Ubicacion
 		Casilla ubicacion = new Casilla();
-		ubicacion.setParametro("Ubicación");
+		ubicacion.setParametro("Ubicacion");
 		ubicacion.setUnidadMedida("");
 		ubicacion.setDescripcion("");
 		ubicacion.setTipo(Tipos.DOUBLE);
@@ -86,7 +86,7 @@ public class CasillaBean implements CasillaBeanRemote {
 		
 		// Casilla Imagen
 		Casilla imagen = new Casilla();
-		imagen.setParametro("Imágen");
+		imagen.setParametro("Imagen");
 		imagen.setUnidadMedida("");
 		imagen.setDescripcion("");
 		imagen.setTipo(Tipos.STRING);
