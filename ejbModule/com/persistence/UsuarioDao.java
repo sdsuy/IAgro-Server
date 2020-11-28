@@ -10,6 +10,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Rol;
+import com.entities.Roles;
 import com.entities.Usuario;
 
 /**
@@ -38,6 +39,10 @@ public class UsuarioDao implements UsuarioDaoLocal {
 				o.setRol(rol); // si el rol ya existe en la base de datos, no hago nada, solo lo asigno completo al Usuario o
 			} catch (NoResultException  e) {
 				em.persist(o.getRol()); // si el rol no existe en la base de datos lo creo (persist)
+			} finally {
+				if(o.getRol().getRol().name().equals(Roles.COMUN.name()) && o.getDocumento() == null) {
+					throw new NullPointerException("Se debe asignar un documento para el rol " + o.getRol().getRol().name() + ".");
+				}
 			}
 			em.persist(o);
 			em.flush();
