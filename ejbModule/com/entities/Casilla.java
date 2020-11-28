@@ -22,7 +22,8 @@ public class Casilla extends Base implements Serializable {
 	
 	private String parametro; 
 	
-	private String uni_medida;
+	@Column(name = "uni_medida")
+	private String unidadMedida;
 	
 	private String descripcion; 
 	
@@ -42,12 +43,12 @@ public class Casilla extends Base implements Serializable {
 		this.parametro = parametro;
 	}
 
-	public String getUni_medida() {
-		return uni_medida;
+	public String getUnidadMedida() {
+		return unidadMedida;
 	}
 
-	public void setUni_medida(String uni_medida) {
-		this.uni_medida = uni_medida;
+	public void setUnidadMedida(String unidadMedida) {
+		this.unidadMedida = unidadMedida;
 	}
 
 	public String getDescripcion() {
