@@ -40,6 +40,7 @@ public class UsuarioDao implements UsuarioDaoLocal {
 			} catch (NoResultException  e) {
 				em.persist(o.getRol()); // si el rol no existe en la base de datos lo creo (persist)
 			} finally {
+				// Si el el rol del usuario es comun y el documento es null throw NullPointerException
 				if(o.getRol().getRol().name().equals(Roles.COMUN.name()) && o.getDocumento() == null) {
 					throw new NullPointerException("Se debe asignar un documento para el rol " + o.getRol().getRol().name() + ".");
 				}
