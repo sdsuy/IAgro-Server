@@ -59,11 +59,11 @@ public class Casilla extends Base implements Serializable {
 	}
 
 	public Tipos getTipos() {
-		return tipos;
+		return tipo;
 	}
 
-	public void setTipos(Tipos tipos) {
-		this.tipos = tipos;
+	public void setTipos(Tipos tipo) {
+		this.tipo = tipo;
 	}
 
 	
