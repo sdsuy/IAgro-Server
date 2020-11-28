@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import com.entities.Casilla;
+import com.entities.Tipos;
 import com.persistence.CasillaDaoLocal;
 
 /**
@@ -47,6 +48,50 @@ public class CasillaBean implements CasillaBeanRemote {
 	@Override
 	public boolean delete(Long id) {
 		return casillaDao.delete(id);
+	}
+
+	@Override
+	public void createDefault() {
+		// Casilla Metodo de Muestreo
+		Casilla metodoMuestreo = new Casilla();
+		metodoMuestreo.setParametro("");
+		metodoMuestreo.setUnidadMedida("");
+		metodoMuestreo.setDescripcion("");
+		metodoMuestreo.setTipo(Tipos.STRING);
+		casillaDao.create(metodoMuestreo);
+		
+		// Casilla Estación de Muestreo
+		Casilla estacionMuestreo = new Casilla();
+		estacionMuestreo.setParametro("");
+		estacionMuestreo.setUnidadMedida("");
+		estacionMuestreo.setDescripcion("");
+		estacionMuestreo.setTipo(Tipos.STRING);
+		casillaDao.create(estacionMuestreo);
+		
+		// Casilla Departamento
+		Casilla departamento = new Casilla();
+		departamento.setParametro("");
+		departamento.setUnidadMedida("");
+		departamento.setDescripcion("");
+		departamento.setTipo(Tipos.STRING);
+		casillaDao.create(departamento);
+		
+		// Casilla Ubicacion
+		Casilla ubicacion = new Casilla();
+		ubicacion.setParametro("");
+		ubicacion.setUnidadMedida("");
+		ubicacion.setDescripcion("");
+		ubicacion.setTipo(Tipos.DOUBLE);
+		casillaDao.create(ubicacion);
+		
+		// Casilla Imagen
+		Casilla imagen = new Casilla();
+		imagen.setParametro("");
+		imagen.setUnidadMedida("");
+		imagen.setDescripcion("");
+		imagen.setTipo(Tipos.STRING);
+		casillaDao.create(imagen);
+		
 	}
 
 }
