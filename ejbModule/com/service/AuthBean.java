@@ -18,7 +18,7 @@ public class AuthBean implements AuthBeanRemote {
 	private static final String APELLIDO = "PEREZ";
 	private static final String DOCUMENTO = "12345678";
 	private static final String EMAIL = "admin@utec";
-	private static final String NICKNAME = "admin";
+	private static final String NICKNAME = "ADMIN";
 	private static final String CLAVE = "1234";
 //	private static final String ROL = "ADMINISTRADOR";
 //	private static final String DESCRIPCION = "USUARIO CON SUPER PODERES";
