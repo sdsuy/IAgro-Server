@@ -35,10 +35,10 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 20, nullable = false, unique = true)
 	private String nickname;
 	
-	@Column(length = 50)
+	@Column(length = 50, nullable = true)
 	private String instituto;
 	
-	@Column(length = 30)
+	@Column(length = 30, nullable = true)
 	private String profesion;
 	
 //	@Enumerated(EnumType.STRING)
