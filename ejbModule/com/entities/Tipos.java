@@ -16,5 +16,14 @@ public enum Tipos {
 	public String getTipo() {
 		return tipo;
 	}
+	
+	public static Tipos valueOfTipos(String tipo) {
+		for(Tipos tp: values()) {
+			if(tp.getTipo().equals(tipo)) {
+				return tp;
+			}
+		}
+		throw new IllegalArgumentException(String.valueOf(tipo));
+	}
 
 }
