@@ -25,7 +25,7 @@ public class Actividad extends Base implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
-	@ManyToMany
+	@OneToMany
 	private List<Informacion> info;
 	
 	private Date fecha;
