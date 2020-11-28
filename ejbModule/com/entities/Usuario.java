@@ -23,13 +23,13 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 40, nullable = false)
 	private String apellido;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 20, nullable = false, unique = true)
 	private String documento;
 	
 	@Column(length = 20, nullable = false)
 	private String clave;
 	
-	@Column(length = 40)
+	@Column(length = 40, unique = true)
 	private String email;
 	
 	@Column(length = 20, nullable = false, unique = true)
