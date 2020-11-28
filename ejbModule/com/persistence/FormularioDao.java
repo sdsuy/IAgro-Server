@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
@@ -40,7 +41,14 @@ public class FormularioDao implements FormularioDaoLocal {
 
 	@Override
 	public Formulario read(Long id) {
-		return em.find(Formulario.class, id);
+//		return em.find(Formulario.class, id);
+		TypedQuery<Formulario> query = em.createNamedQuery("Formulario.readCasillas",Formulario.class);
+		query.setParameter("id", id);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 	@Override
