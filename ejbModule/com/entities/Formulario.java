@@ -1,7 +1,6 @@
 package com.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.*;
@@ -14,6 +13,7 @@ import javax.persistence.*;
 @Table(name="formulario")
 @SequenceGenerator(name = "default_gen", sequenceName = "form_seq", allocationSize = 1)
 @NamedQuery(name="Formulario.readAll", query="SELECT f FROM Formulario f")
+@NamedQuery(name="Formulario.readCasillas", query="SELECT DISTINCT f FROM Formulario f LEFT JOIN FETCH f.casillas c WHERE f.id = :id")
 public class Formulario extends Base implements Serializable {
 
 	
