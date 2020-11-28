@@ -26,6 +26,7 @@ public class Casilla extends Base implements Serializable {
 	
 	private String descripcion; 
 	
+	@Enumerated(EnumType.STRING)
 	private Tipos tipos;
 	
 	
