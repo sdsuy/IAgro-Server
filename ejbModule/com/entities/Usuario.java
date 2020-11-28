@@ -29,7 +29,7 @@ public class Usuario extends Base implements Serializable {
 	@Column(length = 20, nullable = false)
 	private String clave;
 	
-	@Column(length = 40, nullable = false, unique = true)
+	@Column(length = 40, nullable = true, unique = true)
 	private String email;
 	
 	@Column(length = 20, nullable = false, unique = true)
