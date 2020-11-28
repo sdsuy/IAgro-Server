@@ -26,7 +26,7 @@ public class Casilla extends Base implements Serializable {
 	
 	private String descripcion; 
 	
-	private String tipo;
+	private Enum<?> tipo;
 	
 	
 	public Casilla() {
@@ -57,13 +57,15 @@ public class Casilla extends Base implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public String getTipo() {
+	public Enum<?> getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(Enum<?> tipo) {
 		this.tipo = tipo;
 	}
+
+	
 
    
 }
