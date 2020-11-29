@@ -22,7 +22,7 @@ public class Actividad extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	private Formulario form;
 	
 	@ManyToOne
