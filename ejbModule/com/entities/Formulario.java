@@ -73,5 +73,15 @@ public class Formulario extends Base implements Serializable {
 		this.casillas = casillas;
 	}
 
+	public List<Actividad> getActividades() {
+		return actividades;
+	}
+
+	public void setActividades(List<Actividad> actividades) {
+		this.actividades = actividades;
+	}
+	
+	
+
 
 }
