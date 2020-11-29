@@ -34,5 +34,21 @@ public class Informacion extends Base implements Serializable  {
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
+
+	public Casilla getCasilla() {
+		return casilla;
+	}
+
+	public void setCasilla(Casilla casilla) {
+		this.casilla = casilla;
+	}
+
+	public Actividad getActividad() {
+		return actividad;
+	}
+
+	public void setActividad(Actividad actividad) {
+		this.actividad = actividad;
+	}
    
 }
