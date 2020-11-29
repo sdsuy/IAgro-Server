@@ -40,6 +40,11 @@ public class ActividadBean implements ActividadBeanRemote {
 	}
 
 	@Override
+	public List<Actividad> readAllByForm(Long id) {
+		return actividadDao.readAllByForm(id);
+	}
+
+	@Override
 	public boolean update(Actividad o) {
 		return actividadDao.update(o);
 	}
