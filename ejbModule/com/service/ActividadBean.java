@@ -2,6 +2,7 @@ package com.service;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import com.entities.Actividad;
@@ -13,6 +14,7 @@ import com.persistence.ActividadDaoLocal;
 @Stateless
 public class ActividadBean implements ActividadBeanRemote {
 	
+	@EJB
 	private ActividadDaoLocal actividadDao;
 
     /**
