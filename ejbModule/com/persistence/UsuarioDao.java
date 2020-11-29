@@ -70,6 +70,19 @@ public class UsuarioDao implements UsuarioDaoLocal {
 	@Override
 	public boolean update(Usuario o) {
 		try {
+			TypedQuery<Rol> query = em.createNamedQuery("Rol.read", Rol.class);
+			query.setParameter("rol", o.getRol().getRol());
+			try {
+				Rol rol = query.getSingleResult();
+				o.setRol(rol); // si el rol ya existe en la base de datos, no hago nada, solo lo asigno completo al Usuario o
+			} catch (NoResultException  e) {
+				em.persist(o.getRol()); // si el rol no existe en la base de datos lo creo (persist)
+			} finally {
+				// Si el el rol del usuario es comun y el documento es null throw NullPointerException
+				if(o.getRol().getRol().name().equals(Roles.COMUN.name()) && o.getDocumento() == null) {
+					throw new NullPointerException("Se debe asignar un documento para el rol " + o.getRol().getRol().name() + ".");
+				}
+			}
 			em.merge(o);
 			em.flush();
 			return true;
