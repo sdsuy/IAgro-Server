@@ -54,6 +54,13 @@ public class ActividadDao implements ActividadDaoLocal {
 		TypedQuery<Actividad> query = em.createNamedQuery("Actividad.readAll", Actividad.class);
 		return query.getResultList();
 	}
+	
+	@Override
+	public List<Actividad> readAllByForm(Long id) {
+		TypedQuery<Actividad> query = em.createNamedQuery("Actividad.readAllByForm", Actividad.class);
+		query.setParameter("id", id);
+		return query.getResultList();
+	}
 
 	@Override
 	public boolean update(Actividad o) {
