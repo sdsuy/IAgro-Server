@@ -31,7 +31,8 @@ public class Formulario extends Base implements Serializable {
 	@ManyToMany
 	private List<Casilla> casillas;
 	
-	
+	@OneToMany(mappedBy = "form")
+	private List<Actividad> actividades;
 
 	public Formulario() {
 		super();
