@@ -3,9 +3,12 @@ package com.entities;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 /**
  * Entity implementation class for Entity: Actividad
@@ -30,9 +33,13 @@ public class Actividad extends Base implements Serializable {
 	@JoinColumn(name = "actividad_id")
 	private List<Informacion> info;
 	
-	private Date fecha;
+	@Column(name="fecha_hora")
+	@CreationTimestamp
+    private LocalDateTime fechaHora;
 	
-	private Timestamp hora;
+//	private Date fecha;
+//	
+//	private Timestamp hora;
 	
 //	private String valor;
 
@@ -61,24 +68,24 @@ public class Actividad extends Base implements Serializable {
 	}
 
 
-	public Date getFecha() {
-		return fecha;
-	}
-
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-
-	public Timestamp getHora() {
-		return hora;
-	}
-
-
-	public void setHora(Timestamp hora) {
-		this.hora = hora;
-	}
+//	public Date getFecha() {
+//		return fecha;
+//	}
+//
+//
+//	public void setFecha(Date fecha) {
+//		this.fecha = fecha;
+//	}
+//
+//
+//	public Timestamp getHora() {
+//		return hora;
+//	}
+//
+//
+//	public void setHora(Timestamp hora) {
+//		this.hora = hora;
+//	}
 
 
 //	public String getValor() {
