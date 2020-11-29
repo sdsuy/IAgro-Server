@@ -9,6 +9,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Actividad;
+import com.entities.Informacion;
 
 /**
  * Session Bean implementation class ActividadDao
@@ -29,6 +30,10 @@ public class ActividadDao implements ActividadDaoLocal {
 	@Override
 	public boolean create(Actividad o) {
 		try {
+			for(Informacion info: o.getInfo()) {
+				em.persist(info);
+			}
+//			em.persist(o.getInfo());
 			em.persist(o);
 			em.flush();
 			return true;
