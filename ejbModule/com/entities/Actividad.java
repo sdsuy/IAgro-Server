@@ -18,6 +18,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @Table(name="actividades")
 @SequenceGenerator(name = "default_gen", sequenceName = "actividad_seq", allocationSize = 1)
 @NamedQuery(name="Actividad.readAll", query="SELECT a FROM Actividad a")
+@NamedQuery(name="Actividad.readAllByForm", query="SELECT DISTINCT a FROM Actividad a LEFT JOIN FETCH a.form f WHERE f.id = :id")
 public class Actividad extends Base implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
