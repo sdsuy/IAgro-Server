@@ -25,14 +25,16 @@ public class Actividad extends Base implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
+//	@OneToMany(mappedBy="actividad")
 	@OneToMany
+	@JoinColumn(name = "actividad_id")
 	private List<Informacion> info;
 	
 	private Date fecha;
 	
 	private Timestamp hora;
 	
-	private String valor;
+//	private String valor;
 
 	public Actividad() {
 		super();
@@ -79,14 +81,14 @@ public class Actividad extends Base implements Serializable {
 	}
 
 
-	public String getValor() {
-		return valor;
-	}
-
-
-	public void setValor(String valor) {
-		this.valor = valor;
-	}
+//	public String getValor() {
+//		return valor;
+//	}
+//
+//
+//	public void setValor(String valor) {
+//		this.valor = valor;
+//	}
 
 
 	public List<Informacion> getInfo() {
