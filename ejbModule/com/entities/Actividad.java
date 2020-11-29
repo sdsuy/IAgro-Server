@@ -106,6 +106,16 @@ public class Actividad extends Base implements Serializable {
 	public void setInfo(List<Informacion> info) {
 		this.info = info;
 	}
+
+
+	public LocalDateTime getFechaHora() {
+		return fechaHora;
+	}
+
+
+	public void setFechaHora(LocalDateTime fechaHora) {
+		this.fechaHora = fechaHora;
+	}
 	
 	
    
