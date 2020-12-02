@@ -54,4 +54,9 @@ public class ActividadBean implements ActividadBeanRemote {
 		return actividadDao.delete(id);
 	}
 
+	@Override
+	public Actividad readOneAndCasillasEInfo(Long id) {
+		return actividadDao.readOneAndCasillasEInfo(id);
+	}
+
 }
