@@ -11,5 +11,6 @@ import com.entities.Actividad;
 public interface ActividadBeanRemote extends IBean<Actividad>{
 	
 	List<Actividad> readAllByForm(Long id);
+	Actividad readOneAndCasillasEInfo(Long id);
 
 }
