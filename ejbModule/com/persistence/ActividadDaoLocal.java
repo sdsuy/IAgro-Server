@@ -10,5 +10,6 @@ import com.entities.Actividad;
 public interface ActividadDaoLocal extends IDao<Actividad>{
 	
 	List<Actividad> readAllByForm(Long id);
+	Actividad readOneAndCasillasEInfo(Long id);
 	
 }
