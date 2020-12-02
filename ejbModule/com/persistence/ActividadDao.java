@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
@@ -84,6 +85,17 @@ public class ActividadDao implements ActividadDaoLocal {
 		} catch (PersistenceException e) {
 			e.getMessage();
 			return false;
+		}
+	}
+
+	@Override
+	public Actividad readOneAndCasillasEInfo(Long id) {
+		TypedQuery<Actividad> query = em.createNamedQuery("Actividad.readOneAndCasillasEInfo", Actividad.class);
+		query.setParameter("id", id);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
 		}
 	}
 
