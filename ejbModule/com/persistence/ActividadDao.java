@@ -66,6 +66,9 @@ public class ActividadDao implements ActividadDaoLocal {
 	@Override
 	public boolean update(Actividad o) {
 		try {
+			for(Informacion info: o.getInfo()) {
+				em.merge(info);
+			}
 			em.merge(o);
 			em.flush();
 			return true;
